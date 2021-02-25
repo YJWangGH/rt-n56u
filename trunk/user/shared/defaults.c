@@ -362,6 +362,8 @@ struct nvram_pair router_defaults[] = {
 #endif
 
 	// USB related
+	{ "samba_w_buf", "16384" },
+	{ "samba_r_buf", "32768" },
 	{ "acc_num", "0" },
 	{ "enable_ftp", "0" },
 	{ "enable_samba", "0" },
@@ -675,6 +677,7 @@ struct nvram_pair router_defaults[] = {
 	{ "force_mld", "0" },
 	{ "udpxy_enable_x", "0" },
 	{ "udpxy_clients", "10" },
+	{ "udpxy_renew_period", "120" },
 #if defined(APP_XUPNPD)
 	{ "xupnpd_enable_x", "0" },
 	{ "xupnpd_udpxy", "0" },
