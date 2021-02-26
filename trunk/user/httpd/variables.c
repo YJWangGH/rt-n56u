@@ -224,6 +224,7 @@
 			{"st_samba_mode", "", NULL, EVM_RESTART_SMBD},
 #endif
 #if defined(APP_SMBD) || defined(APP_NMBD)
+			{"samba_m_xmit", "", NULL, EVM_RESTART_NMBD},
 			{"samba_w_buf", "", NULL, EVM_RESTART_NMBD},
 			{"samba_r_buf", "", NULL, EVM_RESTART_NMBD},
 			{"st_samba_lmb", "", NULL, EVM_RESTART_NMBD},
