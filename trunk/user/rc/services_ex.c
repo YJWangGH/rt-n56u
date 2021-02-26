@@ -545,11 +545,12 @@ FILE *
 write_smb_conf_header(void)
 {
 	FILE *fp;
-	int i_lmb, i_wins_enable, w_buf, r_buf;
+	int i_lmb, i_wins_enable, m_xmit, w_buf, r_buf;
 	char *p_computer_name, *p_workgroup, *p_res_order;
 
 	unlink(SAMBA_CONF);
 
+	m_xmit = nvram_get_int("samba_m_xmit");
 	w_buf = nvram_get_int("samba_w_buf");
 	r_buf = nvram_get_int("samba_r_buf");
 	i_lmb = nvram_get_int("st_samba_lmb");
@@ -596,7 +597,7 @@ write_smb_conf_header(void)
 	fprintf(fp, "log file = %s\n", "/var/log/samba.log");
 	fprintf(fp, "log level = 0\n");
 	fprintf(fp, "max log size = 5\n");
-	fprintf(fp, "max xmit = %d\n", w_buf);
+	fprintf(fp, "max xmit = %d\n", m_xmit);
 	fprintf(fp, "read size = %d\n", r_buf);
 	fprintf(fp, "socket options = TCP_NODELAY SO_KEEPALIVE SO_RCVBUF=%d SO_SNDBUF=%d\n", w_buf, r_buf);
 	fprintf(fp, "unix charset = UTF8\n");
