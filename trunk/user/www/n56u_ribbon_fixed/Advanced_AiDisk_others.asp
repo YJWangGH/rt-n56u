@@ -256,6 +256,7 @@ function change_smb_enabled(){
 	showhide_div('row_smb_mode', v);
 	showhide_div('row_smb_lmb', v);
 	showhide_div('row_smb_fp', v);
+	showhide_div('row_smb_mxmit', v);
 	showhide_div('row_smb_wbuf', v);
 	showhide_div('row_smb_rbuf', v);
 }
@@ -500,12 +501,20 @@ function done_validating(action){
                                                 <input type="text" name="st_samba_workgroup" class="input" maxlength="32" size="32" value="<% nvram_get_x("", "st_samba_workgroup"); %>"/>
                                             </td>
                                         </tr>
+                                        <tr id="row_smb_mxmit">
+                                            <th>
+                                                <#samba_mxmit#>
+                                            </th>
+                                            <td>
+                                                <input type="text" name="samba_m_xmit" class="input" style="width: 134px" maxlength="5" size="5" placeholder="<#samba_mxmit_text#>" value="<% nvram_get_x("", "samba_m_xmit"); %>"/> [4096..65536]
+                                            </td>
+                                        </tr>
                                         <tr id="row_smb_wbuf">
                                             <th>
                                                 <#samba_wbuf#>
                                             </th>
                                             <td>
-                                                <input type="text" name="samba_w_buf" class="input" maxlength="5" size="5" placeholder="<#samba_wbuf_text#>" value="<% nvram_get_x("", "samba_w_buf"); %>"/> [4096..65536]
+                                                <input type="text" name="samba_w_buf" class="input" style="width: 134px" maxlength="5" size="5" placeholder="<#samba_wbuf_text#>" value="<% nvram_get_x("", "samba_w_buf"); %>"/> [4096..65536]
                                             </td>
                                         </tr>
                                         <tr id="row_smb_rbuf">
@@ -513,7 +522,7 @@ function done_validating(action){
                                                 <#samba_rbuf#>
                                             </th>
                                             <td>
-                                                <input type="text" name="samba_r_buf" class="input" maxlength="5" size="5" placeholder="<#samba_rbuf_text#>" value="<% nvram_get_x("", "samba_r_buf"); %>"/> [4096..65536]
+                                                <input type="text" name="samba_r_buf" class="input" style="width: 134px" maxlength="5" size="5" placeholder="<#samba_rbuf_text#>" value="<% nvram_get_x("", "samba_r_buf"); %>"/> [4096..65536]
                                             </td>
                                         </tr>
                                         <tr id="row_smb_mode">
