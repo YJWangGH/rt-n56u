@@ -362,8 +362,9 @@ struct nvram_pair router_defaults[] = {
 #endif
 
 	// USB related
-	{ "samba_w_buf", "16384" },
-	{ "samba_r_buf", "32768" },
+	{ "samba_m_xmit", "32768" },
+	{ "samba_w_buf", "32768" },
+	{ "samba_r_buf", "65536" },
 	{ "acc_num", "0" },
 	{ "enable_ftp", "0" },
 	{ "enable_samba", "0" },
